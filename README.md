@@ -6,6 +6,7 @@ Created based on examples from [ros-visualization/visualization_tutorials](https
 The following plugins are currently implemented:
 ## BatteryPanel plugin
 Rviz panel for displaing statue of robot's battery, specifically:
+* Charging status
 * Battery Voltage
 * Load Current
 * Remaining Charge indicator
