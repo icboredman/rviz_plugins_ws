@@ -1,0 +1,16 @@
+<library path="lib/librviz_plugins">
+  <class name="rviz_plugins/Teleop"
+         type="rviz_plugins::TeleopPanel"
+         base_class_type="rviz::Panel">
+    <description>
+      A panel widget allowing simple diff-drive style robot base control.
+    </description>
+  </class>
+  <class name="rviz_plugins/Battery"
+         type="rviz_plugins::BatteryPanel"
+         base_class_type="rviz::Panel">
+    <description>
+      A panel widget displaying the state of robot's battery.
+    </description>
+  </class>
+</library>
