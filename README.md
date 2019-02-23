@@ -21,3 +21,17 @@ Rviz panel for publishing [geometry_msgs/Twist](http://docs.ros.org/api/geometry
 
 The only change made to the example code is a slighty different scale in `DriveWidget::DriveWidget()`
 
+---
+### Styles
+Depending on currently selected Qt5 style, some controls may be drawn differently. My preference was to set GTK2 theme by installing qt5-style-plugins tool:
+
+`sudo apt install qt5-style-plugins`
+
+`echo "export QT_QPA_PLATFORMTHEME=gtk2" >> ~/.profile`
+
+Alternatively, a Qt5 Settings application could be used to play with other styles. However, for that the above variable needs to be set to `qt5ct`.
+
+### To compile
+`catkin_make`
+### To install
+`source ./devel/setup.bash`

@@ -133,6 +133,7 @@ BatteryPanel::BatteryPanel( QWidget* parent )
   battery_gauge_layout->addWidget( new QLabel(" Charge"));
   battery_gauge_ = new QProgressBar;
   battery_gauge_->setOrientation(Qt::Vertical);
+  battery_gauge_->setAlignment(Qt::AlignHCenter);
   battery_gauge_->setValue(75);
   battery_gauge_->setFixedSize(55,102);
   battery_gauge_layout->addWidget( battery_gauge_ );
