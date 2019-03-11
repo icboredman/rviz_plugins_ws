@@ -154,9 +154,15 @@ void TeleopPanel::setTopic( const QString& new_topic )
 
 // Publish the control velocities if ROS is not shutting down and the
 // publisher is ready with a valid topic name.
+// If both velocities are zeros, they will be sent only once.
 void TeleopPanel::sendVel()
 {
-  if( ros::ok() && velocity_publisher_ )
+  static bool zeros;
+
+  if (linear_velocity_ != 0 || angular_velocity_ != 0)
+    zeros = false;
+
+  if( ros::ok() && velocity_publisher_ && !zeros)
   {
     geometry_msgs::Twist msg;
     msg.linear.x = linear_velocity_;
@@ -167,6 +173,9 @@ void TeleopPanel::sendVel()
     msg.angular.z = angular_velocity_;
     velocity_publisher_.publish( msg );
   }
+
+  if (linear_velocity_ == 0 && angular_velocity_ == 0)
+    zeros = true;
 }
 
 // Save all configuration data from this panel to the given
