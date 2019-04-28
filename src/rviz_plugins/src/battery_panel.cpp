@@ -221,7 +221,7 @@ void BatteryPanel::setTopic( const QString& new_topic )
       // The old ``battery_subscriber_`` is destroyed by this assignment,
       // and thus the old topic subscription is removed.  The call to
       // nh_subscribe() says we want to subscribe to the new topic name.
-      battery_subscriber_ = nh_.subscribe("battery", 10, &BatteryPanel::callbackBatteryState, this);
+      battery_subscriber_ = nh_.subscribe(input_topic_.toStdString(), 10, &BatteryPanel::callbackBatteryState, this);
     }
     // rviz::Panel defines the configChanged() signal.  Emitting it
     // tells RViz that something in this panel has changed that will
